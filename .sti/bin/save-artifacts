@@ -1,5 +1,8 @@
 #!/bin/sh
-touch /tmp/src/save-artifacts-invoked
+pushd ${HOME} >/dev/null
 
-cd /tmp/src
-tar cf - .
+if [ -d .npm ]
+  tar cf - .npm
+fi
+
+popd >/dev/null
