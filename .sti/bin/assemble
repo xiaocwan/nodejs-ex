@@ -18,11 +18,15 @@ set -e
 # Link the modules
 #npm link $module_list
 #restoreing build artifacts
-if [ -e /tmp/npm.tgz ]; then
-    echo "Restoring build artifacts"
-    pushd ${HOME} >/dev/null
-    tar zxf /tmp/npm.tgz
-    popd >/dev/null
+#if [ -e /tmp/npm.tgz ]; then
+#    echo "Restoring build artifacts"
+#    pushd ${HOME} >/dev/null
+#    tar zxf /tmp/npm.tgz
+#    popd >/dev/null
+#fi
+if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
+  echo "Restoring build artifacts"
+  mv /tmp/artifacts/* $HOME/.
 fi
 echo "---> Installing application source"
 cp -Rf /tmp/src/. ./
