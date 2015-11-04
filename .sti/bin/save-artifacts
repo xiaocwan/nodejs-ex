@@ -2,7 +2,8 @@
 pushd ${HOME} >/dev/null
 
 if [ -d .npm ];then
-  tar zcf /tmp/npm.tgz  .npm
+  #tar zcf /tmp/npm.tgz  .npm
+  tar cf - .npm
 fi
 
 popd >/dev/null
