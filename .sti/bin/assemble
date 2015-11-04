@@ -24,9 +24,9 @@ set -e
 #    tar zxf /tmp/npm.tgz
 #    popd >/dev/null
 #fi
-if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
+if [ "$(ls -a /tmp/artifacts/ 2>/dev/null)" ]; then
   echo "Restoring build artifacts"
-  mv /tmp/artifacts/* $HOME/.
+  mv /tmp/artifacts/.npm* $HOME/
 fi
 echo "---> Installing application source"
 cp -Rf /tmp/src/. ./
