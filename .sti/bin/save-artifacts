@@ -2,7 +2,7 @@
 pushd ${HOME} >/dev/null
 
 if [ -d .npm ];then
-  tar zcf /tmp/artifacts/npm.tgz bundle/ruby .npm
+  tar zcf /tmp/artifacts/npm.tgz  .npm
 fi
 
 popd >/dev/null
