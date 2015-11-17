@@ -29,7 +29,7 @@ if [ "$(ls -a /tmp/artifacts/ 2>/dev/null)" ]; then
   mv /tmp/artifacts/.npm* $HOME/
 fi
 echo "---> Displaying ENV vars"
-echo $(env) >> /tmp/env.run.test
+echo $(env) 
 echo "---> Installing application source"
 cp -Rf /tmp/src/. ./
 #chgrp -R 0 ./
