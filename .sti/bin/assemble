@@ -28,6 +28,8 @@ if [ "$(ls -a /tmp/artifacts/ 2>/dev/null)" ]; then
   echo "Restoring build artifacts"
   mv /tmp/artifacts/.npm* $HOME/
 fi
+echo "---> Displaying ENV vars"
+echo $(env) 
 
 echo "---> Installing application source"
 cp -Rf /tmp/src/. ./
@@ -37,5 +39,4 @@ cp -Rf /tmp/src/. ./
 echo "---> Building your Node application from source"
 npm install -d
 
-echo "---> Displaying ENV vars"
-echo $(env) 
+
